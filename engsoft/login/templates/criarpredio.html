@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Prédio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Prédio</h1>
+    </div>
+    <div class="container">
+        <h2>Nome do Prédio</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nome_predio">Nome do Prédio:</label>
+                <input type="text" class="form-control" id="nome_predio" name="nome_predio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </form>
+    </div>
+    {% if nome_predio %}
+    <div class="container">
+        <h2>Nome do Prédio Criado:</h2>
+        <p>{{ nome_predio }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
