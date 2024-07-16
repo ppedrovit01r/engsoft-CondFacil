@@ -1,7 +1,26 @@
+a.alert {
+    background-color: var(--SEF-orange);
+    border-color: var(--SEF-orange);
+    font-weight: 600;
+}
+
+a.alert:hover {
+    color: var(--SEF-orange);
+}
+
+.header-login {
+    background-color: var(--SEF-darkblue);
+    height: 90px;
+    width: 100vw;
+}
+
 .frontpage {
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-width: 1440px;
+    width: 100vw;
+    justify-content: space-evenly;
 }
 
 /* Estilos para o container do formulário de login */
@@ -27,7 +46,7 @@
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 800;
     font-style: italic;
-    font-size: 41px;
+    font-size: 4.5vw;
     padding: 0 50px;
     margin-bottom: 5px;
     text-align: left;
@@ -38,7 +57,7 @@
 }
 
 /* Media query para telas pequenas (celulares) */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
     .frontpage {
         flex-direction: column;
     }
@@ -50,5 +69,11 @@
     .login-container {
         flex-direction: column;
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 1290px) {
+    .logo h1 {
+        font-size: 60px;
     }
 }

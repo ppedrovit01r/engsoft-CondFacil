@@ -3,6 +3,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
+from .models import Pessoa
 
 def login(request):
     if request.method == 'POST':
@@ -35,3 +36,14 @@ def logoff(request):
 @login_required
 def home(request):
     return render(request, 'home.html')
+
+def some_view(request):
+    # Assuming you have logic to get the current user or relevant person
+    current_user = request.user
+    pessoa = Pessoa.objects.filter(user=current_user).first()
+
+    context = {
+        'is_sindico': pessoa.sindico if pessoa else False,
+    }
+
+    return render(request, 'your_template.html', context)
